@@ -51,7 +51,9 @@ const Contact = () => {
               <div className="contact-icon">📞</div>
               <div>
                 <h4>Phone</h4>
-                <p>+63 908 084 8189</p>
+                <p>+63 908 084 8189
+                    <br />(046) 434 4068
+                </p>
               </div>
             </div>
             
@@ -69,7 +71,7 @@ const Contact = () => {
                 <h4>Hours</h4>
                 <p>Mon-Fri: 7:00 AM - 8:00 PM<br />
                    Sat-Sun: 8:00 AM - 6:00 PM<br />
-                   Emergency: 24/7</p>
+                  </p>
               </div>
             </div>
             

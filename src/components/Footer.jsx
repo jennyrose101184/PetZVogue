@@ -2,6 +2,17 @@ import './Footer.css'
 import logoImg from '../assets/images/logo.jpg'
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  const openFacebookChat = () => {
+    window.open('https://m.me/petzvogue', '_blank');
+  };
+
   return (
     <footer className="footer">
       <div className="container">
@@ -16,8 +27,7 @@ const Footer = () => {
               <h3>PetZVogue Imus</h3>
             </div>
             <p className="footer-description">
-              Premium pet care services in Imus, Cavite that treat your furry friends like family. 
-              Professional, caring, and always available when you need us.
+              Professional pet care services that treat your furry friends like family. From grooming to sitting, we provide the love and attention your pets deserve.
             </p>
             <div className="footer-social">
               <a href="#" className="social-link">📘</a>
@@ -61,6 +71,7 @@ const Footer = () => {
               <div className="contact-detail">
                 <span className="contact-icon">📞</span>
                 <span>+63 908 084 8189</span>
+                <span>+(046) 434 4068</span>
               </div>
               <div className="contact-detail">
                 <span className="contact-icon">✉️</span>
@@ -89,6 +100,16 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      
+      {/* Back to Top Button */}
+      <button className="back-to-top-btn" onClick={scrollToTop} aria-label="Back to top">
+        ↑
+      </button>
+      
+      {/* Facebook Chat Button */}
+      <button className="chat-btn" onClick={openFacebookChat} aria-label="Chat with us on Facebook">
+        💬 Chat Me
+      </button>
     </footer>
   )
 }
