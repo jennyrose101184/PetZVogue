@@ -128,16 +128,28 @@ const Contact = () => {
         <div className="map-section">
           <h3>Find Us</h3>
           <div className="map-placeholder">
-            <iframe
-              src="https://www.google.com/maps?q=Petzvogue+Grooming+Boutique+and+Spa+Unit+2+Blk+15+Lot+9+Ph.8+Avenida+St.+Brgy.+Magdalo+Bahayang+Pag-Asa+Subdivision+Imus+Cavite+Philippines&output=embed"
-              width="100%"
-              height="400"
-              style={{ border: 0, borderRadius: '20px' }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Petzvogue Grooming Boutique and Spa - Imus, Cavite"
-            />
+            <div className="map-container">
+              <iframe
+                src="https://maps.google.com/maps?q=14.4297,120.9365&hl=en&z=16&output=embed"
+                width="100%"
+                height="400"
+                style={{ border: 0, borderRadius: '20px' }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Petzvogue Grooming Boutique and Spa - Imus, Cavite"
+              />
+              <div className="map-fallback">
+                <a 
+                  href="https://www.google.com/maps/search/Petzvogue+Grooming+Boutique+and+Spa+Unit+2+Blk+15+Lot+9+Ph.8+Avenida+St.+Brgy.+Magdalo+Bahayang+Pag-Asa+Subdivision+Imus+Cavite+Philippines"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="map-link"
+                >
+                  🗺️ Open in Google Maps
+                </a>
+              </div>
+            </div>
             <div className="map-overlay">
               <p>📍 Unit 2 Blk 15 Lot 9 Ph.8 Avenida St.<br />
                  Brgy. Magdalo Bahayang Pag-Asa Subdivision<br />
