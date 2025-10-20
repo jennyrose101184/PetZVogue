@@ -70,7 +70,7 @@ const Footer = () => {
               </div>
               <div className="contact-detail">
                 <span className="contact-icon">📞</span>
-                <span>+63 908 084 8189</span>
+                <span>+63 908 084 8189</span><br />
                 <span>+(046) 434 4068</span>
               </div>
               <div className="contact-detail">
