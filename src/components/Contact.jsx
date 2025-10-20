@@ -69,6 +69,7 @@ const Contact = () => {
                 <h4>Hours</h4>
                 <p>Mon-Fri: 7:00 AM - 8:00 PM<br />
                    Sat-Sun: 8:00 AM - 6:00 PM<br />
+                   Emergency: 24/7</p>
               </div>
             </div>
             
