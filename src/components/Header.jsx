@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './Header.css'
+import logoImg from '../assets/images/logo.jpg'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -12,12 +13,20 @@ const Header = () => {
     setIsMenuOpen(false)
   }
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+    closeMenu()
+  }
+
   return (
     <header className="header">
       <div className="container">
         <div className="nav-brand">
           <img 
-            src="/src/assets/images/logo.jpg" 
+            src={logoImg} 
             alt="PetZVogue Logo" 
             className="logo"
           />
@@ -35,7 +44,7 @@ const Header = () => {
         </nav>
         
         <div className="nav-actions">
-          <button className="btn-primary">Book Now</button>
+          <button className="btn-primary" onClick={() => scrollToSection('booking')}>Book Now</button>
           <button 
             className={`mobile-menu-btn ${isMenuOpen ? 'active' : ''}`}
             onClick={toggleMenu}

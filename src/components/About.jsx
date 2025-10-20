@@ -1,5 +1,6 @@
 import './About.css'
 import { useState } from 'react'
+import teamImg from '../assets/images/us.jpg'
 
 const About = () => {
   const [isImageModalOpen, setIsImageModalOpen] = useState(false)
@@ -108,7 +109,7 @@ const About = () => {
           <div className="team-single-column">
             <div className="team-image-container">
               <img 
-                src="/src/assets/images/us.jpg" 
+                src={teamImg} 
                 alt="PetZVogue Team" 
                 className="team-group-image clickable-image" 
                 onClick={openImageModal}
@@ -132,7 +133,7 @@ const About = () => {
                 ✕
               </button>
               <img 
-                src="/src/assets/images/us.jpg" 
+                src={teamImg} 
                 alt="PetZVogue Team - Full View" 
                 className="modal-image"
               />

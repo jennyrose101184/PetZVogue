@@ -1,6 +1,33 @@
 import './Contact.css'
+import { useEffect } from 'react'
 
 const Contact = () => {
+  useEffect(() => {
+    // Load SuperSaaS widget script
+    const script1 = document.createElement('script');
+    script1.src = 'https://cdn.supersaas.net/widget.js';
+    document.head.appendChild(script1);
+
+    script1.onload = () => {
+      // Initialize SuperSaaS widget with correct account and schedule configuration
+      const script2 = document.createElement('script');
+      script2.className = 'supersaas-widget';
+      script2.innerHTML = 'var supersaas_800340 = new SuperSaaS("603494:JAEHub","800340:petzvogue",{"view":"week"})';
+      document.head.appendChild(script2);
+    };
+
+    return () => {
+      // Cleanup scripts on unmount
+      const scripts = document.querySelectorAll('script[src*="supersaas"], script[class="supersaas-widget"]');
+      scripts.forEach(script => script.remove());
+    };
+  }, []);
+
+  const handleBookNow = () => {
+    if (window.supersaas_800340) {
+      window.supersaas_800340.show();
+    }
+  };
   return (
     <section id="contact" className="contact">
       <div className="container">
@@ -24,7 +51,7 @@ const Contact = () => {
               <div className="contact-icon">📞</div>
               <div>
                 <h4>Phone</h4>
-                <p>+63 919 123 4567<br />+63 917 987 6543</p>
+                <p>+63 908 084 8189</p>
               </div>
             </div>
             
@@ -32,7 +59,7 @@ const Contact = () => {
               <div className="contact-icon">✉️</div>
               <div>
                 <h4>Email</h4>
-                                <p>info@petzvogue.ph<br />bookings@petzvogue.ph</p>
+                                <p>petzvogue@gmail.com </p>
               </div>
             </div>
             
@@ -42,7 +69,6 @@ const Contact = () => {
                 <h4>Hours</h4>
                 <p>Mon-Fri: 7:00 AM - 8:00 PM<br />
                    Sat-Sun: 8:00 AM - 6:00 PM<br />
-                   Emergency: 24/7</p>
               </div>
             </div>
             
@@ -57,69 +83,62 @@ const Contact = () => {
             </div>
           </div>
           
-          <div className="contact-form-container">
-            <form className="contact-form">
-              <h3>Send Us a Message</h3>
+          <div className="booking-container">
+            <div id="booking" className="booking-section">
+              <h3>Book Your Appointment</h3>
+              <p>Ready to schedule your pet's care? Click the button below to book online!</p>
               
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="firstName">First Name *</label>
-                  <input type="text" id="firstName" name="firstName" required />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="lastName">Last Name *</label>
-                  <input type="text" id="lastName" name="lastName" required />
-                </div>
+              <button 
+                onClick={handleBookNow} 
+                className="book-now-btn"
+                style={{
+                  padding: '9px 27px',
+                  fontSize: '18px',
+                  fontFamily: 'Arial, sans-serif',
+                  fontWeight: 'bold',
+                  color: '#ffffff',
+                  backgroundColor: '#0078cc',
+                  borderRadius: '9px',
+                  border: 'solid 1px #0078cc',
+                  cursor: 'pointer',
+                  transition: 'background-color 0.3s ease'
+                }}
+                onMouseOver={(e) => e.target.style.backgroundColor = '#0056b3'}
+                onMouseOut={(e) => e.target.style.backgroundColor = '#0078cc'}
+              >
+                Book now
+              </button>
+              
+              <div className="booking-info">
+                <p><strong>What to expect:</strong></p>
+                <ul>
+                  <li>Choose your preferred service</li>
+                  <li>Select date and time</li>
+                  <li>Provide pet information</li>
+                  <li>Confirm your appointment</li>
+                </ul>
               </div>
-              
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="email">Email *</label>
-                  <input type="email" id="email" name="email" required />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="phone">Phone</label>
-                  <input type="tel" id="phone" name="phone" />
-                </div>
-              </div>
-              
-              <div className="form-group">
-                <label htmlFor="petName">Pet Name</label>
-                <input type="text" id="petName" name="petName" />
-              </div>
-              
-              <div className="form-group">
-                <label htmlFor="service">Service Interested In</label>
-                <select id="service" name="service">
-                  <option value="">Select a service</option>
-                  <option value="grooming">Pet Grooming</option>
-                  <option value="sitting">Pet Sitting</option>
-                  <option value="training">Pet Training</option>
-                  <option value="veterinary">Veterinary Care</option>
-                  <option value="walking">Dog Walking</option>
-                  <option value="boarding">Pet Boarding</option>
-                </select>
-              </div>
-              
-              <div className="form-group">
-                <label htmlFor="message">Message *</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-              </div>
-              
-              <button type="submit" className="btn-submit">Send Message</button>
-            </form>
+            </div>
           </div>
         </div>
         
         <div className="map-section">
           <h3>Find Us</h3>
           <div className="map-placeholder">
-            <img 
-              src="https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?w=800&h=400&fit=crop&crop=center" 
-              alt="Location map" 
+            <iframe
+              src="https://www.google.com/maps?q=Petzvogue+Grooming+Boutique+and+Spa+Unit+2+Blk+15+Lot+9+Ph.8+Avenida+St.+Brgy.+Magdalo+Bahayang+Pag-Asa+Subdivision+Imus+Cavite+Philippines&output=embed"
+              width="100%"
+              height="400"
+              style={{ border: 0, borderRadius: '20px' }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Petzvogue Grooming Boutique and Spa - Imus, Cavite"
             />
             <div className="map-overlay">
-              <p>📍 123 Pet Care Lane, Happy Valley, CA 90210</p>
+              <p>📍 Unit 2 Blk 15 Lot 9 Ph.8 Avenida St.<br />
+                 Brgy. Magdalo Bahayang Pag-Asa Subdivision<br />
+                 Imus, Cavite, Philippines</p>
             </div>
           </div>
         </div>

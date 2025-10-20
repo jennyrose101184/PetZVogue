@@ -1,4 +1,5 @@
 import './Footer.css'
+import logoImg from '../assets/images/logo.jpg'
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
           <div className="footer-section">
             <div className="footer-brand">
               <img 
-                src="/src/assets/images/logo.jpg" 
+                src={logoImg} 
                 alt="PetZVogue Logo" 
                 className="footer-logo"
               />
@@ -59,11 +60,11 @@ const Footer = () => {
               </div>
               <div className="contact-detail">
                 <span className="contact-icon">📞</span>
-                <span>+63 919 123 4567</span>
+                <span>+63 908 084 8189</span>
               </div>
               <div className="contact-detail">
                 <span className="contact-icon">✉️</span>
-                <span>info@petzvogue.ph</span>
+                <span>petzvogue@gmail.com</span>
               </div>
               <div className="contact-detail">
                 <span className="contact-icon">🕐</span>
