@@ -1,6 +1,9 @@
+import { useState } from 'react'
 import './Shop.css'
 
 const Shop = () => {
+  const [activeFilter, setActiveFilter] = useState('All')
+  
   const products = [
     {
       id: 1,
@@ -65,6 +68,14 @@ const Shop = () => {
   ]
 
   const categories = ["All", "Food", "Toys", "Accessories", "Grooming", "Technology"]
+  
+  const filteredProducts = activeFilter === 'All' 
+    ? products 
+    : products.filter(product => product.category === activeFilter)
+  
+  const handleFilterClick = (category) => {
+    setActiveFilter(category)
+  }
 
   return (
     <section id="shop" className="shop">
@@ -76,14 +87,18 @@ const Shop = () => {
         
         <div className="shop-filters">
           {categories.map(category => (
-            <button key={category} className={`filter-btn ${category === 'All' ? 'active' : ''}`}>
+            <button 
+              key={category} 
+              className={`filter-btn ${category === activeFilter ? 'active' : ''}`}
+              onClick={() => handleFilterClick(category)}
+            >
               {category}
             </button>
           ))}
         </div>
 
         <div className="products-grid">
-          {products.map(product => (
+          {filteredProducts.map(product => (
             <div key={product.id} className="product-card">
               {product.badge && <div className="product-badge">{product.badge}</div>}
               <div className="product-image">
