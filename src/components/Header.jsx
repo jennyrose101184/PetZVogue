@@ -32,7 +32,6 @@ const Header = () => {
           />
           <h2>PetZVogue</h2>
         </div>
-        
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <ul className="nav-menu">
             <li><a href="#home" onClick={closeMenu}>Home</a></li>
@@ -42,7 +41,6 @@ const Header = () => {
             <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
           </ul>
         </nav>
-        
         <div className="nav-actions">
           <button className="btn-primary" onClick={() => scrollToSection('booking')}>Book Now</button>
           <button 
@@ -56,7 +54,6 @@ const Header = () => {
           </button>
         </div>
       </div>
-      
       {isMenuOpen && <div className="nav-overlay" onClick={closeMenu}></div>}
     </header>
   )
