@@ -1,3 +1,4 @@
+// ...existing code...
 import { useState } from 'react'
 import './Header.css'
 import logoImg from '../assets/images/logo.jpg'
@@ -38,11 +39,12 @@ const Header = () => {
             <li><a href="#services" onClick={closeMenu}>Services</a></li>
             <li><a href="#shop" onClick={closeMenu}>Shop</a></li>
             <li><a href="#about" onClick={closeMenu}>About</a></li>
+            <li><a href="#reviews" onClick={closeMenu}>Reviews</a></li>
             <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
           </ul>
         </nav>
         <div className="nav-actions">
-          <button className="btn-primary" onClick={() => scrollToSection('booking')}>Book Now</button>
+          <button className="btn-primary" onClick={() => scrollToSection('contact')}>Book Now</button>
           <button 
             className={`mobile-menu-btn ${isMenuOpen ? 'active' : ''}`}
             onClick={toggleMenu}

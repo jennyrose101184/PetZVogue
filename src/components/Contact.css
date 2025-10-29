@@ -1,3 +1,49 @@
+/* Ensure booking button is always visible and responsive */
+.book-now {
+  width: 100%;
+  max-width: 350px;
+  display: block;
+  margin: 0 auto 2rem auto;
+  font-size: 1.1rem;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(37,99,235,0.12);
+}
+
+@media (max-width: 768px) {
+  .book-now {
+    width: 100%;
+    max-width: 100%;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 1rem;
+  }
+  .booking-appointment {
+    padding: 1.25rem;
+  }
+  .facility-info {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-now {
+    font-size: 0.95rem;
+    padding: 0.75rem 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .booking-appointment {
+    padding: 1rem;
+  }
+  .facility-info {
+    padding: 1rem;
+  }
+}
 .contact {
   padding: 100px 0;
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
@@ -35,33 +81,106 @@
   font-weight: 600;
 }
 
-.contact-item {
+.contact-content {
   display: flex;
+  flex-direction: row;
+  gap: 2rem;
   align-items: flex-start;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
+}
+/* removed stray background property */
+.facility-info,
+.booking-appointment {
   background: #f8fafc;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.book-now {
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  border: none;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  display: block;
+}
+
+.contact-item {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
   border-radius: 15px;
-  transition: transform 0.3s ease;
+  padding: 1.5rem;
 }
-
-.contact-item:hover {
-  transform: translateX(5px);
-}
-
 .contact-icon {
-  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-  width: 50px;
-  height: 50px;
+  font-size: 2rem;
+  color: #f97316;
+  background: #fff7ed;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
-  border-radius: 50%;
-  flex-shrink: 0;
 }
-
+.contact-label {
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+}
+.facility-title,
+.booking-title {
+  color: #2563eb;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+.booking-title {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+.booking-desc {
+  color: #64748b;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+.booking-info {
+  background: #fff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.booking-label {
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+.booking-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #f97316;
+  font-size: 1rem;
+}
+.booking-info li {
+  margin-bottom: 0.75rem;
+  color: #f97316;
+}
+.booking-info li span {
+  color: #222;
+  font-weight: 500;
+}
 .contact-item h4 {
   color: #3b82f6;
   font-weight: 600;
@@ -326,42 +445,19 @@
 }
 
 /* Small Mobile Styles */
-@media (max-width: 480px) {
-  .contact {
-    padding: 50px 0;
+@media (max-width: 900px) {
+  .contact-content {
+    flex-direction: column;
+    gap: 1.5rem;
   }
-  
-  .booking-container {
+  .facility-info,
+  .booking-appointment {
     padding: 1.25rem;
   }
-  
-  .contact-item {
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    padding: 1rem;
-  }
-  
-  .contact-icon {
-    margin-bottom: 0.75rem;
-  }
-  
-  .social-icons {
-    justify-content: center;
-  }
-  
-  .social-icon {
-    width: 45px;
-    height: 45px;
-  }
-  
-  .map-placeholder img {
-    height: 250px;
-  }
-  
-  .map-overlay {
-    padding: 1rem;
-    font-size: 0.9rem;
+  .book-now {
+    max-width: 100%;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
   }
 }
 

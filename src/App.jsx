@@ -1,11 +1,13 @@
-import './App.css'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import Services from './components/Services'
-import Shop from './components/Shop'
-import About from './components/About'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
+
+import './App.css';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Services from './components/Services';
+import Shop from './components/Shop';
+import About from './components/About';
+import Reviews from './components/Reviews';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -15,10 +17,11 @@ function App() {
       <Services />
       <Shop />
       <About />
+      <Reviews />
       <Contact />
       <Footer />
     </div>
-  )
+  );
 }
 
 export default App

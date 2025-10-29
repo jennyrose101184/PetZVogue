@@ -30,7 +30,7 @@ const Hero = () => {
               From grooming to sitting, we provide the love and attention your pets deserve.
             </p>
             <div className="hero-actions">
-              <button className="btn-hero-primary" onClick={() => scrollToSection('booking')}>Book Service</button>
+              <button className="btn-hero-primary" onClick={() => scrollToSection('contact')}>Book Service</button>
               <button className="btn-hero-secondary" onClick={() => scrollToSection('services')}>View Services</button>
             </div>
           </div>

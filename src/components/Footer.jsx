@@ -24,7 +24,7 @@ const Footer = () => {
                 alt="PetZVogue Logo" 
                 className="footer-logo"
               />
-              <h3>PetZVogue Imus</h3>
+              <h3>PetZVogue</h3>
             </div>
             <p className="footer-description">
               Professional pet care services that treat your furry friends like family. From grooming to sitting, we provide the love and attention your pets deserve.
